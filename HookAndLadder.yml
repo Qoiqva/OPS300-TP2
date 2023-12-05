@@ -2,8 +2,8 @@
 - hosts: dnsprime
   remote_user: root
   vars:
-    zonename: puppet.man
-    master: 192.168.120.2
+    zonename: "puppet.man"
+    master: "192.168.120.2"
   tasks:
     - name: Make sure bind is installed
       package:
@@ -18,8 +18,10 @@
       service:
         name: named
         state: started
+
   handlers:
     - name: restart named
       service:
         name: named
-        enabled: yes
+        eiabled: yes
+
